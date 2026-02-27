@@ -13,7 +13,7 @@ public protocol MergeCodable: Codable {
 
 extension MergeCodable {
     // Decode from JSON data
-    static func decode(from data: Data) -> Self {
+    public static func decode(from data: Data) -> Self {
         // Try direct decode first
         if let decoded = try? JSONDecoder().decode(Self.self, from: data) {
             return decoded
@@ -39,7 +39,7 @@ extension MergeCodable {
     }
     
     // Encode to JSON data
-    func encode() -> Data? {
+    public func encode() -> Data? {
         try? JSONEncoder().encode(self)
     }
 }
