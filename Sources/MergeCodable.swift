@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol MergeCodable: Codable {
+public protocol MergeCodable: Codable {
     init()
 }
 
